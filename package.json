@@ -4,7 +4,7 @@
   },
   "scripts": {
     "dev": "parcel ./src/pages/*.pug",
-    "build": "parcel build ./src/pages/index.pug"
+    "build": "parcel build ./src/pages/*.pug -d ./release"
   },
   "devDependencies": {
     "node-sass": "^5.0.0",
