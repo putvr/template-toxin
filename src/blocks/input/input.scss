@@ -9,7 +9,7 @@
     }
   }
 
-  &__label {
+  &__title {
     font-weight: bold;
     font-size: 12px;
     line-height: 15px;
@@ -42,11 +42,55 @@
     }
   }
 
+  &__label {
+    padding-left: 15px;
+  }
+
   &__checkbox {
     //TODO
-    &-label {
-      padding-left: 15px;
+
+  }
+
+  &__radio {
+
+  }
+
+  &__toggle + div {
+    position: relative;
+
+    &::before {
+      display: block;
+      width: 40px;
+      height: 20px;
+      border: 1px solid #BC9CFF;
+      border-radius: 10px;
+      position: absolute;
+      top: 0;
+      left: -20px;
+      content: '';
     }
+
+    &::after {
+      display: block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      transition: all .5s ease;
+      cursor: pointer;
+      position: absolute;
+      top: 4px;
+      left: -16px;
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      content: '';
+    }
+  }
+
+  &__toggle:checked ~ div::after {
+      right: 10px;
+  }
+
+  input[type=checkbox] {
+    visibility: hidden;
   }
 }
 

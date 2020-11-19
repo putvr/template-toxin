@@ -1,7 +1,7 @@
-mixin input(params={})
+mixin input(params)
   label.input.my-3
     .input__wrap.input__wrap--between
-      span.input__label=params.label
+      span.input__title=params.label
       if (params.desc)
         span.input__desc=params.desc
 
@@ -19,9 +19,28 @@ mixin input(params={})
         label.input__wrap
           input.input__checkbox(
             type=params.type,
-            name=params.name,
-            value=params.value,
-            checked=params.checked,
+            name=item.name,
+            value=item.value,
+            checked=item.checked,
           )
-          .input__checkbox-label=item.label
-
+          .input__label=item.label
+    else if (params.type === 'radio')
+      .input__wrap
+        each item in params.items
+          label.input__wrap
+            input.input__radio(
+              type=params.type,
+              name=item.name,
+              value=item.value,
+            )
+            .input__label=item.label
+    else if (params.type === 'toggle')
+      each item in params.items
+        label.input__wrap
+          input.input__toggle(
+            type='checkbox',
+            name=item.name,
+            value=item.value,
+            checked=item.checked,
+          )
+          .input__label=item.label

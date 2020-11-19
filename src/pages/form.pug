@@ -38,7 +38,6 @@ block content
         +input({
           label: 'Checkbox Buttons',
           type: 'checkbox',
-          id: '',
           items: [
             {
               name: 'smoke',
@@ -58,6 +57,39 @@ block content
               checked
             },
           ]
-
+        })
+        +input({
+          label: 'Radio Buttons',
+          type: 'radio',
+          items: [
+            {
+              name: 'gender',
+              value: 'male',
+              label: 'Мужчина',
+              checked
+            },
+            {
+              name: 'gender',
+              value: 'female',
+              label: 'Женщина'
+            },
+          ]
+        })
+        +input({
+          label: 'Toggle Buttons',
+          type: 'toggle',
+          items: [
+            {
+              name: 'spam',
+              value: 'yes',
+              label: 'Получать спецпредложения',
+              checked
+            },
+            {
+              name: 'spam',
+              value: 'no',
+              label: 'Получать спецпредложения'
+            },
+          ]
         })
       .col-4
