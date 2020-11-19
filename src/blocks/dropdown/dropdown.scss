@@ -1,0 +1,54 @@
+.dropdown {
+  &__label {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $color-dark-100;
+    margin-bottom: 5px;
+  }
+
+  &__desc {
+    font-size: 12px;
+    line-height: 15px;
+    text-align: right;
+    text-transform: uppercase;
+    color: $color-dark-50;
+  }
+
+  &__wrap {
+    position: relative;
+
+
+    &::after {
+      width: 18px;
+      height: 18px;
+      background-image: url("../img/expand_more-black-18dp.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      content: '';
+      position: absolute;
+      top: 12px;
+      right: 20px;
+    }
+  }
+
+  &__field {
+    width: 100%;
+    appearance: none;
+    overflow: hidden;
+    outline: none;
+    height: 44px;
+    color: $color-dark-75;
+    padding-right: 15px;
+    padding-left: 15px;
+    border: 1px solid $color-dark-75;;
+    box-sizing: border-box;
+    border-radius: 4px;
+  }
+
+  &__option {
+    //TODO
+  }
+}

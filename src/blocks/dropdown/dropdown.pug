@@ -1,0 +1,18 @@
+mixin dropdown(params={})
+  .dropdown.mb-3
+    .row
+      .col
+        .title.dropdown__label= params.label
+    if params.desc
+      .col
+        .desc.dropdown__desc= params.desc
+    .row
+      .col-12.dropdown__wrap
+        select().dropdown__field(
+          name=params.name,
+          required = params.required)
+          if params.options
+            each item in params.options
+              option.dropdown__option(
+                value = item.value) #{item.name}
+

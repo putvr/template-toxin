@@ -1,0 +1,63 @@
+extends ../templates/page.pug
+
+block meta
+  title Form Elements
+
+block content
+  .container
+    .row
+      .col-4
+        +input({
+          label: 'Text Field',
+          name: 'email',
+          type: 'email',
+          placeholder: 'Email',
+          desc: 'Default',
+        })
+        +input({
+          label: 'Text Field',
+          type: 'text',
+          placeholder: 'This is pretty awesome',
+          desc: 'Hover / Focus',
+        })
+        +dropdown({
+          label: 'Dropdown',
+          options: [{
+            value: 0,
+            name: "Сколько гостей",
+          }]
+        })
+        +input({
+          label: 'masked text field',
+          name: 'date',
+          type: 'date',
+          placeholder: 'ДД.ММ.ГГГГ',
+          required
+        })
+      .col-4
+        +input({
+          label: 'Checkbox Buttons',
+          type: 'checkbox',
+          id: '',
+          items: [
+            {
+              name: 'smoke',
+              value: 'smoke',
+              label: 'Можно курить'
+            },
+            {
+              name: 'pets',
+              value: 'pets',
+              label: 'Можно с питомцами',
+              checked
+            },
+            {
+              name: 'guests',
+              value: 'guests',
+              label: 'Можно пригласить гостей (до 10 человек)',
+              checked
+            },
+          ]
+
+        })
+      .col-4
