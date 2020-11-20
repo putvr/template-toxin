@@ -9,7 +9,7 @@ mixin input(params)
     if (params.type === 'checkbox')
       each item in params.items
         label.input__wrap
-          input.input__checkbox(
+          input.input__element(
             type=params.type,
             name=item.name,
             value=item.value,
@@ -20,10 +20,11 @@ mixin input(params)
       .input__wrap
         each item in params.items
           label.input__wrap
-            input.input__radio(
+            input.input__element.input__element--radio(
               type=params.type,
               name=item.name,
               value=item.value,
+              checked=item.checked,
             )
             .input__label=item.label
     else if (params.type === 'toggle')

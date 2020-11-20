@@ -52,9 +52,8 @@
     padding-left: 15px;
   }
 
-  &__checkbox {
-    & + .input__label {
-      &::after {
+  &__element {
+    & + .input__label::after {
         content: "";
         display: block;
         position: absolute;
@@ -63,7 +62,6 @@
         width: 20px;
         height: 20px;
         border-radius: 4px;
-      }
     }
     &:not(:checked) + .input__label {
       &::after {
@@ -78,8 +76,8 @@
         content: "\2713"; //TODO replace to L
         display: block;
         position: absolute;
-        top: 5px;
-        left: 5px;
+        top: 4px;
+        left: 4px;
         font-size: 1.3em;
         line-height: 0.8;
         color: $primary-gradient;
@@ -87,9 +85,16 @@
       }
     }
 
-  }
-
-  &__radio {
+    &--radio + .input__label::after {
+      border-radius: 50%;
+    }
+    &--radio:checked + .input__label::before  {
+      content: "";
+      width: 12px;
+      height: 12px;
+      background: $primary-gradient;
+      border-radius: 50%;
+    }
 
   }
 
