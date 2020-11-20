@@ -6,15 +6,7 @@ mixin input(params)
         span.input__desc=params.desc
 
     -
-    if (['text', 'email', 'date'].includes(params.type))
-      input.input__field(
-        type=params.type,
-        name=params.name,
-        placeholder=params.placeholder,
-        pattern=params.pattern,
-        required=params.required,
-      )
-    else if (params.type === 'checkbox')
+    if (params.type === 'checkbox')
       each item in params.items
         label.input__wrap
           input.input__checkbox(
@@ -36,11 +28,20 @@ mixin input(params)
             .input__label=item.label
     else if (params.type === 'toggle')
       each item in params.items
-        label.input__wrap
+        label.input__wrap.input__wrap--toggle
           input.input__toggle(
             type='checkbox',
             name=item.name,
             value=item.value,
             checked=item.checked,
           )
+          span.input__decorator
           .input__label=item.label
+    else
+      input.input__field(
+        type=params.type,
+        name=params.name,
+        placeholder=params.placeholder,
+        pattern=params.pattern,
+        required=params.required,
+      )

@@ -3,9 +3,15 @@
 
   &__wrap {
     display: flex;
+    position: relative;
+    cursor: pointer;
 
     &--between {
       justify-content: space-between;
+    }
+
+    &--toggle {
+      margin-left: 20px;
     }
   }
 
@@ -55,38 +61,46 @@
 
   }
 
-  &__toggle + div {
-    position: relative;
+  &__toggle + .input__decorator {
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      cursor: pointer;
+    }
 
     &::before {
-      display: block;
       width: 40px;
       height: 20px;
-      border: 1px solid #BC9CFF;
+      border: 1px solid $color-dark-25;
       border-radius: 10px;
-      position: absolute;
       top: 0;
       left: -20px;
-      content: '';
+      transition: all .5s ease;
     }
 
     &::after {
-      display: block;
       width: 12px;
       height: 12px;
       border-radius: 50%;
       transition: all .5s ease;
-      cursor: pointer;
-      position: absolute;
       top: 4px;
       left: -16px;
-      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-      content: '';
+      background-color: $color-dark-25;
     }
   }
 
-  &__toggle:checked ~ div::after {
-      right: 10px;
+  &__toggle:checked + .input__decorator {
+    &::after {
+      left: 5px;
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    }
+
+    &::before {
+      border: 1px solid $color-purple;
+    }
   }
 
   input[type=checkbox] {
