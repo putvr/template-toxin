@@ -8,7 +8,7 @@ mixin dropdown(params={})
         .desc.dropdown__desc= params.desc
     .row
       .col-12.dropdown__wrap
-        select().dropdown__field(
+        select.dropdown__field(
           name=params.name,
           required = params.required)
           if params.options
