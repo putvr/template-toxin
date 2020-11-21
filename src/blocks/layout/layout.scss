@@ -1,0 +1,33 @@
+.layout {
+  width: 100%;
+
+  &__wrap {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+
+    &--between {
+      justify-content: space-between;
+    }
+
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $color-dark-100;
+    margin-bottom: 5px;
+  }
+
+  &__desc {
+    font-size: 12px;
+    line-height: 15px;
+    text-align: right;
+    text-transform: uppercase;
+    color: $color-dark-50;
+  }
+
+}
+

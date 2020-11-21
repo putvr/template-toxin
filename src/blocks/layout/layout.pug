@@ -1,0 +1,11 @@
+mixin layout(params)
+  .layout
+    .layout__wrap.layout__wrap--between
+      span.layout__title=params.title
+      if (params.desc)
+        span.layout__desc=params.desc
+    block
+
+mixin layout__content()
+  .layout__content
+    block

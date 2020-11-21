@@ -92,4 +92,31 @@ block content
             },
           ]
         })
+
+        +layout({
+          title: "like button"
+        })
+          +layout__content
+            +button({
+              type: 'like',
+              name: 'likes_count',
+              value: '2'
+            })
+            +button({
+              type: 'like',
+              name: 'likes_count',
+              value: '12',
+              liked: true
+            })
+          +layout__content()
+            +button({
+              type: 'rate',
+              name: 'rate_count',
+              value: '2'
+            })
+            +button({
+              type: 'rate',
+              name: 'rate_count',
+              value: '2'
+            })
       .col-4

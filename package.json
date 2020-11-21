@@ -3,7 +3,7 @@
     "includePaths": ["node_modules"]
   },
   "scripts": {
-    "dev": "parcel ./src/pages/*.pug",
+    "dev": "parcel serve --host 0.0.0.0 ./src/pages/*.pug",
     "build": "parcel build ./src/pages/*.pug -d ./release --public-url '/template-toxin'"
   },
   "devDependencies": {

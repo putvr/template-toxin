@@ -18,8 +18,11 @@
 //@import "layout/navigation";
 //@import "layout/footer";
 
+@import "../blocks/layout/layout";
 @import "../blocks/input/input";
 @import "../blocks/dropdown/dropdown";
+@import "../blocks/button/button";
+//@import "../blocks/form/form";
 
 @import "pages/index";
 @import "pages/colors";
