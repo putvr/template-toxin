@@ -1,18 +1,19 @@
 mixin button(params)
   if (params.type === 'like')
     - let liked = params.liked ? 'btn_like--liked' : 'btn_like--not-liked'
-
+    - const icon = params.liked ? 'favorite' : 'favorite_border'
     button.btn.btn_like(
       class=liked,
       name=params.name,
       value=params.value
     )
-      span.material-icons.md-18 favorite
+      span.material-icons.btn_like__icon=icon
       span=params.value
+
   else if (params.type === 'rate')
-    .wrap_rates
+    .rate_wrap
       span.material-icons.rate__element.rate__element--checked star
       span.material-icons.rate__element star
       span.material-icons.rate__element star
       span.material-icons.rate__element star
-      span.material-icons.rate__element star
+      span.material-icons.md-light.rate__element star
