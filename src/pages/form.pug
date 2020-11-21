@@ -83,44 +83,52 @@ block content
               name: 'spam',
               value: 'yes',
               label: 'Получать спецпредложения',
-              checked
+              checked: true
             },
             {
               name: 'spam',
               value: 'no',
-              label: 'Получать спецпредложения'
+              label: 'Получать спецпредложения',
+              checked: false
             },
           ]
         })
 
         +layout({
-          title: "like button"
-        })
-          +layout__content
-            +button({
+          head: {
+            title: "like button"
+          },
+          items: [
+            {
+              block: 'button',
               type: 'like',
               name: 'likes_count',
               value: '2'
-            })
-            +button({
+            }, {
+              block: 'button',
               type: 'like',
               name: 'likes_count',
               value: '12',
               liked: true
-            })
+            }]
+        })
 
-          +layout({
-              title: "rate button"
-          })
-          +layout__content()
-            +button({
+        +layout({
+          head: {title: "rate button"},
+          items: [
+            {
+              block: 'button',
               type: 'rate',
               name: 'rate_count',
               value: '2'
-            })
-            +button({
+            },
+            {
+              block: 'button',
               type: 'rate',
               name: 'rate_count',
               value: '2'
-            })
+            }
+          ]
+        })
+
       .col-4

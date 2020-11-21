@@ -1,11 +1,15 @@
+mixin layout__head(params)
+  .layout__title_wrap.layout__wrap--between
+    span.layout__title=params.title
+    if (params.desc)
+      span.layout__desc=params.desc
+
+mixin layout__body(params)
+  .layout__content
+    each item in params
+      +#{item.block}(item)
+
 mixin layout(params)
   .layout.my-3
-    .layout__title_wrap.layout__wrap--between
-      span.layout__title=params.title
-      if (params.desc)
-        span.layout__desc=params.desc
-    block
-
-mixin layout__content()
-  .layout__content
-    block
+    +layout__head(params.head)
+    +layout__body(params.items)
