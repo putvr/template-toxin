@@ -2,9 +2,9 @@ extends ../templates/page.pug
 
 mixin colors_item(color, name, code)
   .row.mb-4.colors_list
-    .col-3
+    .col-12.col-sm-3
       .colors_list__img(style="background-color: " + code)
-    .col-9
+    .col-12.col-sm-9
       .colors_list__name
         h2= name
       .colors_list__code= color
@@ -21,7 +21,7 @@ block meta
 block content
   .container
     .row.mt-5
-      .col
+      .col-sm-12.col-md-5.col
         +colors_item("#1F2041", "Dark Shade 100%", "#1F2041")
         +colors_item("#1F2041", "Dark Shade 75%", "rgba(31, 32, 65, 0.75)")
         +colors_item("#1F2041", "Dark Shade 50%", "rgba(31, 32, 65, 0.50)")
@@ -29,7 +29,7 @@ block content
         +colors_item("#1F2041", "Dark Shade 5%", "rgba(31, 32, 65, 0.05)")
         +colors_item("#1F2041", "Purple", "#BC9CFF")
         +colors_item("#6FCF97", "Green", "#6FCF97")
-      .col
+      .col-sm-12.col-md-5.col
         +text_item("h1", "H1", "This one is the sub-section or widget title")
         +text_item("h2", "H2", "Next one is the item title inside widgets")
         +text_item("h3", "H3", "This is a label or CTA text")
