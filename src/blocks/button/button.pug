@@ -11,9 +11,9 @@ mixin button(params)
       span=params.value
 
   else if (params.type === 'rate')
+    // - let checked = '';
     .rate_wrap
-      span.material-icons.rate__element.rate__element--checked star
-      span.material-icons.rate__element star
-      span.material-icons.rate__element star
-      span.material-icons.rate__element star
-      span.material-icons.md-light.rate__element star
+      - for (let num=1; num<=5; num+=1)
+        - const checked = (num <= params.rate) ? 'star' : 'star_border';
+        span.material-icons.rate__element=checked
+

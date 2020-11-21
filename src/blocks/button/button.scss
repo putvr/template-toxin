@@ -29,13 +29,7 @@
 }
 
 .rate {
-  &__wrap {
-    //display: flex;
-  }
-
   &__element {
-    &--checked {
-      color: $primary-gradient;
-    }
+    color: $color-purple;
   }
 }

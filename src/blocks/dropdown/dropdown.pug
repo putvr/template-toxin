@@ -1,11 +1,9 @@
 mixin dropdown(params)
-  - console.log(params)
-
   .dropdown.mb-3
     select.dropdown__field(
       name=params.name,
       required=params.required)
-      option(disabled, selected, hidden, value="")= params.placeholder
+      option(disabled, selected, value="")= params.placeholder
       if params.options
         each option in params.options
           option.dropdown__option(value=option.value)=option.name
