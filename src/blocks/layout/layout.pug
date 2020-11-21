@@ -5,11 +5,14 @@ mixin layout__head(params)
       span.layout__desc=params.desc
 
 mixin layout__body(params)
-  .layout__content
-    each item in params
+  - if (!params.direction) params.direction = 'col'
+  - const direction = 'layout__content--' + params.direction;
+
+  .layout__content(class=direction)
+    each item in params.items
       +#{item.block}(item)
 
 mixin layout(params)
   .layout.my-3
-    +layout__head(params.head)
-    +layout__body(params.items)
+    +layout__head(params)
+    +layout__body(params)

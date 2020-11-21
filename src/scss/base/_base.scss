@@ -415,3 +415,8 @@ progress {
 [hidden] {
   display: none !important;
 }
+
+input[type=checkbox],
+input[type=radio] {
+  visibility: hidden;
+}

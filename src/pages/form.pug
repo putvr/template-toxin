@@ -7,50 +7,81 @@ block content
   .container
     .row
       .col-4
-        +input({
-          label: 'Text Field',
-          name: 'email',
-          type: 'email',
-          placeholder: 'Email',
+        +layout({
+          title: 'Text Field',
           desc: 'Default',
-        })
-        +input({
-          label: 'Text Field',
-          type: 'text',
-          placeholder: 'This is pretty awesome',
-          desc: 'Hover / Focus',
-        })
-        +dropdown({
-          label: 'Dropdown',
-          options: [{
-            value: 0,
-            name: "Сколько гостей",
-          }]
-        })
-        +input({
-          label: 'masked text field',
-          name: 'date',
-          type: 'date',
-          placeholder: 'ДД.ММ.ГГГГ',
-          required
-        })
-      .col-4
-        +input({
-          label: 'Checkbox Buttons',
-          type: 'checkbox',
           items: [
             {
+              block: 'input',
+              name: 'email',
+              type: 'email',
+              placeholder: 'Email',
+            }]
+        })
+        +layout({
+          title: 'Text Field',
+          desc: 'Hover / Focus',
+          items: [
+            {
+              block: 'input',
+              name: 'email',
+              type: 'text',
+              placeholder: 'This is pretty awesome',
+            }]
+        })
+        +layout({
+          title: 'Dropdown',
+          items: [
+            {
+              block: 'dropdown',
+              name: 'date',
+              type: 'text',
+              placeholder: 'Сколько гостей',
+              options: [{
+                value: 1,
+                name: '1',
+              }, {
+                value: 2,
+                name: '2',
+              }, {
+                value: 3,
+                name: '3',
+              }
+              ]
+            }]
+        })
+        +layout({
+          title: 'masked text field',
+          items: [
+            {
+              block: 'input',
+              name: 'date',
+              type: 'text',
+              placeholder: 'ДД.ММ.ГГГГ',
+            }]
+        })
+      .col-4
+        +layout({
+          title: "Checkbox Buttons",
+          items: [
+            {
+              block: 'input',
+              type: 'checkbox',
               name: 'smoke',
               value: 'smoke',
               label: 'Можно курить'
             },
             {
+              block: 'input',
+              type: 'checkbox',
               name: 'pets',
               value: 'pets',
               label: 'Можно с питомцами',
               checked
             },
             {
+              block: 'input',
+              type: 'checkbox',
               name: 'guests',
               value: 'guests',
               label: 'Можно пригласить гостей (до 10 человек)',
@@ -58,34 +89,41 @@ block content
             },
           ]
         })
-        +input({
-          label: 'Radio Buttons',
-          type: 'radio',
+        +layout({
+          title: "Radio Buttons",
+          direction: 'row',
           items: [
             {
+              block: 'input',
+              type: 'radio',
               name: 'gender',
               value: 'male',
               label: 'Мужчина',
-              checked
+              checked: true
             },
             {
+              block: 'input',
+              type: 'radio',
               name: 'gender',
               value: 'female',
               label: 'Женщина'
             },
           ]
         })
-        +input({
-          label: 'Toggle Buttons',
-          type: 'toggle',
+        +layout({
+          title: 'Toggle Buttons',
           items: [
             {
+              block: 'input',
+              type: 'toggle',
               name: 'spam',
               value: 'yes',
               label: 'Получать спецпредложения',
               checked: true
             },
             {
+              block: 'input',
+              type: 'toggle',
               name: 'spam',
               value: 'no',
               label: 'Получать спецпредложения',
@@ -93,11 +131,9 @@ block content
             },
           ]
         })
-
         +layout({
-          head: {
-            title: "like button"
-          },
+          title: "like button",
+          direction: 'row',
           items: [
             {
               block: 'button',
@@ -110,11 +146,13 @@ block content
               name: 'likes_count',
               value: '12',
               liked: true
-            }]
+            }
+          ]
         })
 
         +layout({
-          head: {title: "rate button"},
+          title: "rate button",
+          direction: 'row',
           items: [
             {
               block: 'button',
