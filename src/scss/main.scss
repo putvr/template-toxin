@@ -9,19 +9,16 @@
 @import "base/typography";
 //@import "base/utilities";
 
-// @import "components/button";
-// @import "components/card";
-// @import "components/form";
+//@import "../../node_modules/jquery-ui/themes/base";
+@import "../../node_modules/jquery-ui/themes/base/slider";
 
 @import "layout/grid";
-//@import "layout/header";
-//@import "layout/navigation";
-//@import "layout/footer";
 
 @import "../blocks/layout/layout";
 @import "../blocks/input/input";
 @import "../blocks/dropdown/dropdown";
 @import "../blocks/button/button";
+@import "../blocks/range/range";
 //@import "../blocks/form/form";
 
 @import "pages/index";

@@ -1,0 +1,15 @@
+mixin range(params)
+  .slider
+    .row
+      .col
+        label.slider__title()=params.title
+      .col
+        input.slider__input(
+          type="text",
+          name=params.name,
+          id="amount",
+          min=params.min,
+          max=params.max,
+          readonly)
+    div#slider-range
+

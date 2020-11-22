@@ -6,7 +6,7 @@ block meta
 block content
   .container-xl
     .row
-      .col-sm-12.col-md-4.col
+      .col-sm-12.col-md-4
         +layout({
           title: 'Text Field',
           desc: 'Default',
@@ -60,7 +60,7 @@ block content
               placeholder: 'ДД.ММ.ГГГГ',
             }]
         })
-      .col-sm-12.col-md-5.col
+      .col-sm-12.col-md-4
         +layout({
           title: "Checkbox Buttons",
           items: [
@@ -169,4 +169,15 @@ block content
           ]
         })
 
-      .col-sm-12.col-md-4.col
+      .col-sm-12.col-md-4
+        +layout({
+          items: [
+            {
+              title: 'Price range',
+              block: 'range',
+              name: 'price',
+              type: 'range',
+              min: '0',
+              max: '30000'
+            }]
+        })
