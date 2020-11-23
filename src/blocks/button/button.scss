@@ -1,4 +1,51 @@
 .btn {
+  border: none;
+  border-radius: 22px;
+  outline: none;
+  padding: 14px 20px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+
+  &--dark {
+    background: $gradient-primary;
+  }
+
+  &--light {
+    color: $color-purple;
+    background: #fff;
+    border: 2px solid $color-purple;
+  }
+
+  &--text {
+    background: #fff;
+    color: $color-purple;
+    border: none;
+  }
+
+  &--link {
+    width: 100%;
+    margin-right: 30px;
+    position: relative;
+    display: flex;
+    align-content: center;
+
+    span {
+      flex-grow: 1;
+    }
+  }
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  //&:focus {
+  //}
+  //
+  //&:active {
+  //}
+
   &_like {
     font-size: 10px;
     line-height: 12px;
@@ -18,7 +65,7 @@
 
     &--liked {
       color: $color-purple;
-      border: 1px solid $primary-gradient;
+      border: 1px solid $gradient-primary;
     }
 
     &--not-liked {
@@ -31,5 +78,40 @@
 .rate {
   &__element {
     color: $color-purple;
+  }
+}
+
+.pagination {
+  display: flex;
+  align-content: space-between;
+  list-style: none;
+
+  &__element {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:first-child {
+      background: $gradient-primary;
+      border-radius: 22px;
+      a {
+        color: #fff;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 15px;
+    color: $color-dark-25;
+  }
+
+  &__next {
+    background: $gradient-secondary;
+    border-radius: 22px;
+    color: #fff;
   }
 }

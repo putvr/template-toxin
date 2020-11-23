@@ -1,6 +1,7 @@
 mixin layout__head(params)
   .layout__title_wrap.layout__wrap--between
-    span.layout__title=params.title
+    if (params.title)
+      span.layout__title=params.title
     if (params.desc)
       span.layout__desc=params.desc
 
@@ -8,7 +9,7 @@ mixin layout__body(params)
   - if (!params.direction) params.direction = 'col'
   - const direction = 'layout__content--' + params.direction;
 
-  .layout__content(class=direction)
+  .layout__content(class=direction, style=params.style)
     each item in params.items
       +#{item.block}(item)
 
