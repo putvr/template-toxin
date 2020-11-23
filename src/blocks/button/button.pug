@@ -1,19 +1,46 @@
 mixin button(params)
-  if (params.type === 'like')
-    - let liked = params.liked ? 'btn_like--liked' : 'btn_like--not-liked'
-    - const icon = params.liked ? 'favorite' : 'favorite_border'
-    button.btn.btn_like(
-      class=liked,
-      name=params.name,
-      value=params.value
-    )
-      span.material-icons.btn_like__icon=icon
-      span=params.value
+  case params.type
+    when 'like'
+      - let liked = params.liked ? 'btn_like--liked' : 'btn_like--not-liked'
+      - const icon = params.liked ? 'favorite' : 'favorite_border'
+      button.btn.btn_like(class=liked, name=params.name, value=params.value)
+        span.material-icons.btn_like__icon=icon
+        span=(params.value)
 
-  else if (params.type === 'rate')
-    // - let checked = '';
-    .rate_wrap
-      - for (let num=1; num<=5; num+=1)
-        - const checked = (num <= params.rate) ? 'star' : 'star_border';
-        span.material-icons.rate__element=checked
+    when 'rate'
+      .rate_wrap
+        - for (let num=1; num<=5; num+=1)
+          - const checked = (num <= params.rate) ? 'star' : 'star_border';
+          span.material-icons.rate__element=checked
+
+    when 'button-dark'
+      button.btn.btn--dark()= params.name
+
+    when 'button-light'
+      button.btn.btn--light()= params.name
+
+    when 'button-text'
+      button.btn.btn--text()= params.name
+
+    when 'button-link'
+      button.btn.btn--dark.btn--link
+        span= params.name
+        i.material-icons= 'arrow_forward'
+    when 'pagination'
+      ul.pagination
+        - for(let i=1; i<params.count; i+=1)
+          li.pagination__element
+            a.pagination__link(href='#')= i
+        li.pagination__element
+          a.pagination__link(href='#') ...
+        li.pagination__element
+          a.pagination__link(href='#') 15
+        li.pagination__element
+          a.pagination__link.pagination__next(href='#')
+            i.material-icons= 'arrow_forward'
+      .desc= params.desc
+
+    default
+      .wrap
+        button.btn
 
